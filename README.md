@@ -1,59 +1,179 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# <img src="./public/logo.png" alt="TokoKita Logo" width="40" height="40" /> TokoKita - Modern Product Management System
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+> A comprehensive e-commerce and product management dashboard built with Laravel 11. Featuring secure authentication, full CRUD capabilities, and a responsive UI designed with Tailwind CSS.
 
-## About Laravel
+![Preview](./public/preview.png)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## ✨ Key Features
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### 💻 User Interface (Frontend)
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+* **Modern Dashboard:** Clean and intuitive layout built with **Blade Templates** and **Tailwind CSS**.
+* **Responsive Design:** Fully optimized for Desktop, Tablet, and Mobile devices using Tailwind's utility-first classes.
+* **Interactive Forms:** User-friendly forms for adding and editing products with validation feedback.
+* **Dynamic Content:** Real-time product listing with pagination and search capabilities.
+* **Profile Management:** Users can update their profile information and change passwords securely.
 
-## Learning Laravel
+### 🛡️ Administrator & Backend
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+* **Secure Authentication:** Built-in login, registration, and password reset functionality (Laravel Breeze/Auth).
+* **CRUD Operations:** Complete Create, Read, Update, and Delete system for managing product inventories.
+* **Image Management:** Handles product image uploads and storage securely using Laravel's Storage system.
+* **Data Validation:** Robust server-side validation to ensure data integrity.
+* **Database:** Efficient data structuring using **MySQL** with Eloquent ORM.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## ♟️ Tech Stack
 
-## Laravel Sponsors
+| Area | Technologies |
+| --- | --- |
+| **Framework** | Laravel 11 (PHP) |
+| **Frontend** | Blade Templates, Tailwind CSS, Alpine.js, Vite |
+| **Database** | MySQL / MariaDB (Eloquent ORM) |
+| **Authentication** | Laravel Breeze |
+| **Server** | Apache / Nginx |
+| **Language** | PHP 8.2+ |
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## ⚙️ Installation & Setup (Local)
 
-### Premium Partners
+Follow these steps to run the project locally on your machine.
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+### Prerequisites
 
-## Contributing
+* PHP (v8.2+)
+* Composer
+* Node.js & NPM
+* MySQL Database
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### 1. Clone Repository
 
-## Code of Conduct
+```bash
+git clone https://github.com/fatiya17/tokokita.git
+cd tokokita
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+```
 
-## Security Vulnerabilities
+### 2. Install Dependencies
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Install PHP dependencies via Composer and Frontend dependencies via NPM.
 
-## License
+```bash
+# Install PHP packages
+composer install
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+# Install Node modules
+npm install
+
+```
+
+### 3. Environment Configuration
+
+Duplicate the `.env.example` file and rename it to `.env`. Configure your database credentials.
+
+```bash
+cp .env.example .env
+
+```
+
+Open `.env` and update the database settings:
+
+```env
+APP_NAME=TokoKita
+APP_URL=http://localhost:8000
+
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=tokokita_db
+DB_USERNAME=root
+DB_PASSWORD=
+
+```
+
+### 4. Application Setup
+
+Generate the application key, run migrations, and link the storage.
+
+```bash
+# Generate Key
+php artisan key:generate
+
+# Run Database Migrations
+php artisan migrate
+
+# Link Storage (for image uploads)
+php artisan storage:link
+
+```
+
+### 5. Build & Run
+
+Build the frontend assets and start the local development server.
+
+```bash
+# Build assets (in a separate terminal)
+npm run build
+
+# Start server
+php artisan serve
+
+```
+
+Access the application at: `http://localhost:8000`
+
+---
+
+## 🔗 Application Routes
+
+The application uses standard Laravel web routes. Below are the key routes available.
+
+| Method | URI | Description |
+| --- | --- | --- |
+| **GET** | `/login` | User Login Page |
+| **GET** | `/register` | User Registration Page |
+| **GET** | `/dashboard` | Main Dashboard (Authenticated) |
+| **GET** | `/products` | List all products |
+| **GET** | `/products/create` | Show form to add new product |
+| **POST** | `/products` | Store new product data |
+| **GET** | `/products/{id}/edit` | Show form to edit product |
+| **PUT** | `/products/{id}` | Update product data |
+| **DELETE** | `/products/{id}` | Delete a product |
+| **PATCH** | `/profile` | Update user profile info |
+
+---
+
+## ☁️ Deployment Guide
+
+This project can be deployed on shared hosting, VPS, or PaaS (like Railway/Heroku/Vercel with PHP runtime).
+
+### Standard Deployment (Shared Hosting/VPS)
+
+1. Upload files to the server.
+2. Point the web server (Nginx/Apache) document root to the `public/` folder.
+3. Set correct permissions for `storage/` and `bootstrap/cache/` folders:
+```bash
+chmod -R 775 storage bootstrap/cache
+
+```
+
+
+4. Run migrations on the production database.
+5. Ensure `.env` is configured for production (`APP_ENV=production`, `APP_DEBUG=false`).
+
+---
+
+## 🪶 Credits
+
+Developed by **Fatiya Labibah**.
+
+* **Framework:** [Laravel](https://www.google.com/search?q=https://laravel.com)
+* **Styling:** [Tailwind CSS](https://www.google.com/search?q=https://tailwindcss.com)
+* **Icons:** [Heroicons](https://www.google.com/search?q=https://heroicons.com) / Bootstrap Icons
+* **Resource:** [Playlist Youtube](https://www.youtube.com/playlist?list=PLIan8aHxsPj2O_xTaKO56CdwjEOuZPNE1) 
+
+---
+
+⭐ **Don't forget to star this repo if you find it useful!**
+
+---
+
+*© 2026 TokoKita Project. All Rights Reserved.*
