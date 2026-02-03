@@ -1,4 +1,4 @@
-# <img src="./public/logo.png" alt="TokoKita Logo" width="40" height="40" /> TokoKita - Modern Product Management System
+# 🏪 TokoKita - Modern Product Management System
 
 > A comprehensive e-commerce and product management dashboard built with Laravel 11. Featuring secure authentication, full CRUD capabilities, and a responsive UI designed with Tailwind CSS.
 
